@@ -61,10 +61,17 @@ function calculate(memory, storage, delivery) {
     const deliveryCost = parseInt(deliveryCostText);
     // balance
 
-    let currentBalance = document.getElementById('sub-total').innerText;
-    let totalBalance = document.getElementById('total-price');
-    totalBalance.innerText = memoryCost + storageCost + deliveryCost + parseInt(currentBalance);
+    // let currentBalance = document.getElementById('best-price').innerText;
+    // let fina = parseInt(currentBalance);
+    // let totalBalance = document.getElementById('total-price');
+    // totalBalance.innerText = fina + memoryCost + storageCost + deliveryCost;
+    // console.log(currentBalance);
+    let balance = document.getElementById('best-price').innerText;
 
+    let total = document.getElementById('total-price').innerText;
+
+    total.innerText = balance + memoryCost + storageCost + deliveryCost;
+    console.log(total)
 
     // promo code
     document.getElementById('button-promo').addEventListener('click', function() {
