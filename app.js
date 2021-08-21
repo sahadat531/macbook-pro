@@ -1,77 +1,129 @@
-function action(id) {
-    document.getElementById(id).addEventListener('click', function() {
+// Calculate Memory
+function memoryUpdate(id) {
 
-        const bestPrice = document.getElementById('best-price');
-        const memoryCost = document.getElementById('memory-cost');
-        const Storage = document.getElementById('storage-cost');
-        const Delivery = document.getElementById('delivery-cost');
-        const TotalPrice = document.getElementById('total-price');
-        // bestPrice.innerText = 1299;
-        // memoryCost.innerText = 0;
-        // Storage.innerText = 0;
-        // Delivery.innerText = 0;
+    let totalMemoryCost = document.getElementById('memory-cost');
+    if (id == '8gb') {
+        totalMemoryCost.innerText = 0;
+    } else if (id == '16gb') {
+        totalMemoryCost.innerText = 180;
 
-        function Price() {
-            let bestPrice = 1299;
-            let gb8Price = 0;
-            let gb16Price = 180;
-            let gb256Price = 0;
-            let gb512Price = 100;
-            let gb1tbPrice = 180;
-            let free = 0;
-            let free20 = 20;
-            if (id == '8gb') {
-                gb8Price = memoryCost.innerText = 0;
-            } else if (id == '16gb') {
-                gb16Price = memoryCost.innerText = 180;
-            } else if (id == '256gb') {
-                gb256Price = Storage.innerText = 0;
-            } else if (id == '512gb') {
-                gb512Price = Storage.innerText = 100;
-            } else if (id == '1tb') {
-                gb1tbPrice = Storage.innerText = 180;
-            } else if (id == 'free') {
-                free = Delivery.innerText = 0;
-            } else if (id == '20') {
-                free20 = Delivery.innerText = 20;
-            }
-
-            let finalPrice = parseInt(document.getElementById('best-price').innerText) + parseInt(document.getElementById('memory-cost').innerText) + parseInt(document.getElementById('storage-cost').innerText) + parseInt(document.getElementById('delivery-cost').innerText);
-
-            document.getElementById('total-price').innerText = finalPrice;
-        }
-
-        Price();
-
-        // if (id == '8gb') {
-        //     let price8gb = memoryCost.innerText = 0;
-        // } else if (id == '16gb') {
-        //     let price16gb = memoryCost.innerText = 180;
-        // } else if (id == '256gb') {
-        //     let price256gb = Storage.innerText = 0;
-        // } else if (id == '512gb') {
-        //     let price512gb = Storage.innerText = 100;
-        // } else if (id == '1tb') {
-        //     let price1tb = Storage.innerText = 180;
-        // } else if (id == 'free') {
-        //     let pricefree = Delivery.innerText = 0;
-        // } else if (id == '20') {
-        //     let price20 = Delivery.innerText = 20;
-        // }
-
-        // let finalPrice = price8gb + price16gb + price256gb + price512gb + price1tb + pricefree + price20;
-
-        // document.getElementById('total-price').innerText = finalPrice;
+    }
+    return totalMemoryCost;
+}
 
 
+// Calculate storage
+function storageUpdate(id) {
 
-    });
+    let storageTotalCost = document.getElementById('storage-cost');
+
+    if (id == '256gb') {
+        storageTotalCost.innerText = 0;
+    }
+
+    if (id == '512gb') {
+        storageTotalCost.innerText = 100;
+    }
+
+    if (id == '1tb') {
+        storageTotalCost.innerText = 180;
+    }
+    return storageTotalCost;
+}
+
+//Calculate delivery
+function deliveryUpdate(id) {
+
+    let deliveryTotalCost = document.getElementById('delivery-cost');
+
+    if (id == 'free') {
+        deliveryTotalCost.innerText = 0;
+    }
+    if (id == '20') {
+        deliveryTotalCost.innerText = 20;
+    }
+    return deliveryTotalCost;
 
 }
-action('8gb');
-action('16gb');
-action('256gb');
-action('512gb');
-action('1tb');
-action('free');
-action('20');
+
+// calculate Final Price
+function calculate(memory, storage, delivery) {
+    let memoryCostText = memoryUpdate(memory).innerText;
+    const memoryCost = parseInt(memoryCostText);
+
+
+    // storage count
+    let storageCostText = storageUpdate(storage).innerText;
+    const storageCost = parseInt(storageCostText);
+
+    // delivery
+    let deliveryCostText = deliveryUpdate(delivery).innerText;
+    const deliveryCost = parseInt(deliveryCostText);
+    // balance
+
+    let currentBalance = document.getElementById('sub-total').innerText;
+    let totalBalance = document.getElementById('total-price');
+    totalBalance.innerText = memoryCost + storageCost + deliveryCost + parseInt(currentBalance);
+
+
+    // promo code
+    document.getElementById('button-promo').addEventListener('click', function() {
+        const promoField = document.getElementById('my-promo');
+        const promoCode = promoField.value;
+
+        if (promoCode == 'stevekaku') {
+
+            const total = totalBalance.innerText;
+            const myTotal = total / 20;
+            const totalPrice = document.getElementById('my-total').innerText;
+            totalPrice = myTotal;
+
+
+        }
+        // document.getElementById('my-total').innerText = total;
+
+        promoField.value = '';
+
+
+    })
+
+}
+// update memory cost
+
+document.getElementById('8gb').addEventListener('click', function() {
+    memoryUpdate('8gb');
+    calculate('8gb');
+});
+
+document.getElementById('16gb').addEventListener('click', function() {
+    memoryUpdate('16gb');
+    calculate('16gb');
+});
+// storage update
+
+document.getElementById('256gb').addEventListener('click', function() {
+    storageUpdate('256gb');
+    calculate('256gb');
+});
+
+document.getElementById('512gb').addEventListener('click', function() {
+    storageUpdate('512gb');
+    calculate('512gb');
+});
+
+document.getElementById('1tb').addEventListener('click', function() {
+    storageUpdate('1tb');
+    calculate('1tb');
+});
+
+// update delivery
+
+document.getElementById('free').addEventListener('click', function() {
+    deliveryUpdate('free');
+    calculate('free');
+});
+
+document.getElementById('20').addEventListener('click', function() {
+    deliveryUpdate('20');
+    calculate('20');
+});
