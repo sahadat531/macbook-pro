@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Css File Integration -->
+    <link rel="stylesheet" href="style.css">
+    <title>Mac Book Pro Shopping Cart</title>
+</head>
+
+<body>
+    <!-- Design part start  -->
+    <section class="container">
+        <div class="left-image">
+            <img src="images/mac.png" alt="Mac Book Pro">
+        </div>
+
+        <!-- Product Details start  -->
+        <div class="right-info">
+            <h1>Customize your Blue 24-inch iMac with Apple M1 chip.</h1>
+            <p>Apple M1 chip with 8-core CPU with 4 performance cores and 4 efficiency cores, 7-core GPU, and 16-core Neural Engine 8GB unified memory 256GB SSD storage Two Thunderbolt / USB 4 ports Magic Mouse Magic Keyboard - US English
+            </p>
+
+            <!-- Memory Section Start  -->
+            <div class="memory-section">
+                <h5>Memory</h5>
+                <button type="button" class="btn btn-outline-secondary" id="8gb">8GB unified memory</button>
+                <button type="button" class="btn btn-outline-secondary" id="16gb">16GB unified memory</button>
+            </div>
+
+            <!-- Storage Section Strat  -->
+            <div class="storage-section">
+                <h5>Storage</h5>
+                <button type="button" class="btn btn-outline-secondary" id="256gb">256GB SSD storage</button>
+                <button type="button" class="btn btn-outline-secondary" id="512gb">512GB SSD storage</button>
+                <button type="button" class="btn btn-outline-secondary" id="1tb">1TB SSD storage</button>
+            </div>
+
+            <!-- Delivery Section Start  -->
+            <div class="delivery-section">
+                <h5>Choose your delivery option</h5>
+                <button type="button" class="btn btn-outline-secondary" id="free">Friday, Aug 25 FREE Prime Delivery</button>
+                <button type="button" class="btn btn-outline-secondary" id="20">Friday, Aug 21 Delivery charge $20</button>
+            </div>
+
+            <!-- Price Section Start  -->
+            <div class="price-section">
+                <table class="table">
+                    <tbody>
+                        <tr class="border-top-0">
+                            <th scope="row">Best Price</th>
+                            <td id="best-price">$1299</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Extra Memory Cost</th>
+                            <td>$<span id="memory-cost">0</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Extra Storage Cost</th>
+                            <td>$<span id="storage-cost">0</span></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Delivery charge</th>
+                            <td>$<span id="delivery-cost">0</span></td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Total Price</th>
+                            <td>$<span id="total-price">1299</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Cupon Section Start  -->
+            <h5 class="promo">Add Pomo code</h5>
+            <div class="cupon-section">
+                <form class="form-inline">
+                    <div class="form-group mx-sm-3 mb-2">
+                        <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-2">Confirm identity</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- bootstrap Js Integration -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- Javascript file integration  -->
+    <script src="app.js"></script>
+</body>
+
+</html>

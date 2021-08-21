@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding-top: 100px;
+}
+
+.left-image {
+    width: 50%;
+}
+
+.right-info {
+    width: 50%;
+}
+
+.left-image img {
+    width: 100%;
+    padding-right: 80px;
+}
+
+.memory-section,
+.storage-section,
+.delivery-section,
+.promo {
+    margin-top: 50px;
+}
+
+.price-section {
+    margin-top: 80px;
+}
